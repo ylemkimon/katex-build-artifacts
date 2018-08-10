@@ -1,35 +1,25 @@
 {
-  "name": "cors-anywhere",
-  "version": "0.4.1",
-  "description": "CORS Anywhere is a reverse proxy which adds CORS headers to the proxied request. Request URL is taken from the path",
+  "name": "katex-build-artifacts",
+  "version": "0.1.0",
+  "description": "Reverse proxy for KaTeX CircleCI build artifacts with appropriate CORS headers",
   "license": "MIT",
-  "author": "Rob Wu <rob@robwu.nl>",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Rob--W/cors-anywhere.git"
-  },
-  "bugs": {
-    "url": "https://github.com/Rob--W/cors-anywhere/issues/",
-    "email": "rob@robwu.nl"
+    "url": "https://github.com/ylemkimon/katex-build-artifacts.git"
   },
   "keywords": [
-    "cors",
-    "cross-domain",
-    "http-proxy",
-    "proxy",
-    "heroku"
+    "katex",
+    "cors"
   ],
   "main": "./lib/cors-anywhere.js",
   "files": [
     "lib/",
     "test/",
-    "Procfile",
-    "demo.html",
     "server.js"
   ],
   "dependencies": {
     "http-proxy": "1.11.1",
-    "proxy-from-env": "0.0.1"
+    "request": "^2.87.0"
   },
   "devDependencies": {
     "coveralls": "^2.11.6",
@@ -42,10 +32,11 @@
   },
   "scripts": {
     "lint": "eslint .",
+    "start": "node server.js",
     "test": "mocha ./test/test*.js --reporter spec",
     "test-coverage": "istanbul cover ./node_modules/.bin/_mocha -- test/test.js test/test-ratelimit.js --reporter spec"
   },
   "engines": {
-    "node": ">=0.10.0"
+    "node": ">=6"
   }
 }
